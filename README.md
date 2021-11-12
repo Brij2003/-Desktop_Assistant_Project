@@ -87,9 +87,6 @@ It will  do most of the tasks on voice command like :
 
 As of now we are still working on maximizing the tasks it can do and add more and more functionality to it.
 
-
-For more examples about automation and selenium, please see my other repo [Automation by Keshav](https://github.com/keshavjha018/Web_Automation)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
