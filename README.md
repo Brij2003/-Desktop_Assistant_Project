@@ -57,6 +57,7 @@ Majority of this project is made via Python, Selenium & other python based libra
 * [Python](https://www.python.org/)
 * [Selenium](https://www.selenium.dev/)
 * Chrome webdriver
+* PyQt5-For frontend GUI
 * GUI
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -69,10 +70,14 @@ There are some requirements for running these programs in any system, Your syste
 
 ### Prerequisites
 
-* pip
-  sh
+* Selenium
+  ```sh
   pip install selenium
-  
+  ```
+* PyQt5
+  ```sh
+  pip install PyQt5
+  ```  
   
   
 ## Usage
@@ -93,12 +98,12 @@ As of now we are still working on maximizing the tasks it can do and add more an
 ## Roadmap
 
 - [x] Add readme documentation
-- [] Add basic functionalities
+- [x] Add basic functionalities
 - [] Add Additional features
 - Supports
     - [x] Windows
-    - [] Mac
-    - [] Linux
+    - [x] Mac
+    - [x] Linux
 
 
 ## License
