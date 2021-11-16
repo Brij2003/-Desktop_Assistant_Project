@@ -1,8 +1,5 @@
 <br />
 <div align="center">
-<!--   <a href="https://github.com/keshavjha018/Desktop_Assistant_Project">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
 
   <h3 align="center">Desktop Assistant Project</h3>
 
@@ -44,9 +41,8 @@
 ## About The Project
 
 - This is a group project called Desktop Assistant, developed for OOP Course, 3rd Semester, IIIT Dharwad.
-- Made via Python based Selenium framework, the project automates the repetative and boring tasks in our daily life.
+- Made via Python based libraries & frameworks like Selenium, PyQt5 etc, the project automates the repetative and boring tasks in our daily life.
 - It takes voice command and follows to automate them, just like your personal assistant for Desktop.
-- Currently we are working for windows based machines, but we aim to make it available for Mac & Linux systems too in future.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -57,8 +53,8 @@ Majority of this project is made via Python, Selenium & other python based libra
 * [Python](https://www.python.org/)
 * [Selenium](https://www.selenium.dev/)
 * Chrome webdriver
-* PyQt5-For frontend GUI
-* GUI
+* [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) - For frontend GUI
+* Qt Designer Software
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -83,12 +79,13 @@ There are some requirements for running these programs in any system, Your syste
 ## Usage
 
 It will  do most of the tasks on voice command like :
+- Greet/welcome messages & commands
 - Sending E-Mails
 - Telling Latest News
 - Crawling to any website  (Based on Voice command)
 - Showing weather
 - Opening Desktop Apps
-- & many others too
+- & many others.
 
 As of now we are still working on maximizing the tasks it can do and add more and more functionality to it.
 
@@ -99,7 +96,7 @@ As of now we are still working on maximizing the tasks it can do and add more an
 
 - [x] Add readme documentation
 - [x] Add basic functionalities
-- [] Add Additional features
+- [ ] Add Additional features
 - Supports
     - [x] Windows
     - [x] Mac
@@ -118,10 +115,10 @@ MIT License.
 ## Team
 
 Names
-- Keshav kumar Jha (20bcs070)
+- Keshav Kumar Jha (20bcs070)
+- Brij (20bcs033)
 - Lucky Yadav (20bcs077)
 - Daulat  Kumar Jha (20bcs037)
-- Brij (20bcs033)
 - Hemant
 - Rohan
 - Sparsh
