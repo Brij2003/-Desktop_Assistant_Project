@@ -2,11 +2,11 @@ command_info = ['who are you','what is your name','what are you','tell me about 
 info = ['Sir, i am your desktop assistant, My name is walter. What can i do for you',
         'sir, I am walter. Your desktop assistant. Happy to see you.']
 
-command_greet = ['hello walter','are you there walter','are you there','hello']
+command_greet = ['hello walter','are you there walter','are you there','hello','hey walter']
 greet = ['Hello sir, how may i help you?','Hello sir, I am here for your help','Yes sir, how may i help you']
 
 command_quit = ['close the program', 'quit the program', 'terminate the program', 'exit the program'
-                'close program', 'quit program', 'terminate program', 'exit program','close','quit','exit']
+                'close program', 'quit program', 'terminate program', 'exit program','close','quit','exit','terminate yourself']
 command_quit_replay = ['Closing the program.', 'Quiting the program.',
                        'Terminating the program.', 'Exiting the program.']
 

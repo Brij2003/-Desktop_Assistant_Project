@@ -57,8 +57,7 @@ class Ui_Walter(object):
         font.setBold(True)
         font.setWeight(75)
         self.run_button.setFont(font)
-        self.run_button.setStyleSheet("background-color: rgb(255, 78, 81);\n"
-"")
+        self.run_button.setStyleSheet("background-color: rgb(255, 78, 81);\n")
         self.run_button.setObjectName("run_button")
         self.state_lab = QtWidgets.QLabel(self.centralwidget)
         self.state_lab.setGeometry(QtCore.QRect(1200, 750, 241, 121))
@@ -127,8 +126,7 @@ class Ui_Walter(object):
         font.setWeight(75)
         self.textBrowser.setFont(font)
         self.textBrowser.setStyleSheet("background:transparent;\n"
-"border-radius:none;\n"
-"color: rgb(44, 255, 238);")
+"border-radius:none;\n""color: rgb(44, 255, 238);")
         self.textBrowser.setObjectName("textBrowser")
         Walter.setCentralWidget(self.centralwidget)
 
