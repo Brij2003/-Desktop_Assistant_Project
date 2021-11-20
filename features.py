@@ -29,6 +29,7 @@ from Walter_UI import Ui_Walter
 import subprocess
 import pyautogui
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 #for web scrapping
 import requests
 from bs4 import BeautifulSoup
@@ -198,6 +199,16 @@ def my_location():
 
 class log():
     def __init__(self):
+        opt = Options()
+        opt.add_argument("start-maximized")
+        opt.add_argument("--disable-extensions")
+        # Pass the argument 1 to allow and 2 to block
+        opt.add_experimental_option("prefs", {
+            "profile.default_content_setting_values.media_stream_mic": 1,
+            "profile.default_content_setting_values.media_stream_camera": 1,
+            "profile.default_content_setting_values.geolocation": 1,
+            "profile.default_content_setting_values.notifications": 2
+        })
         # accessing the chromedriver path from path.txt
         self.chromedriver_path = access.path("chromedriver_path")
         # accessing the sign in url from url.txt
@@ -205,6 +216,8 @@ class log():
         # Defining a driver to open chrome driver
         self.driver = webdriver.Chrome(self.chromedriver_path)
         self.driver.minimize_window()
+        self.driver = webdriver.Chrome(
+            chrome_options=opt, executable_path=self.chromedriver_path)
         self.driver.get(self.sign_in)  # feeding the sign in link to the driver
 
     def login(self):
@@ -212,7 +225,8 @@ class log():
         This is a login function used to login your personal gmail account
         by accessing data directli from the files
         """
-        self.user_mail, self.user_password = access.personal_details("your_name")
+        self.user_mail, self.user_password = access.personal_details(
+            "brij")
         #accessing the password and email details of owner
         self.enter_mail = self.driver.find_element_by_id("identifierId")
         self.enter_mail.send_keys(self.user_mail)
@@ -258,3 +272,38 @@ class mail(log):
         #identifing the send button using css_selector of element and clicking on it with the help of click() function
     	sleep(5)
     	self.driver.close()  # closing the driver
+
+class meet(log):
+    def new_meet(self):
+        pass
+
+    def get_class(self):
+        self.curr_meet_link, self.lecture = access.meet_link()
+        self.driver.get(self.curr_meet_link)
+
+    def check_class(self):
+        if self.lecture == "None":
+            res = "Sorry sir, but according to my data you dont have any current lecture at this time"
+            return res
+
+        elif self.curr_meet_link == "None":
+            res = "Sir my data dosen't contain this class link"
+
+        elif self.curr_meet_link == "http://www.gmail.com":
+            res = "Sir I don't have the meet link so please check in your mail"
+            return res
+
+        else:
+            return 1
+
+    def join(self):
+        sleep(4)
+        self.driver.find_element_by_css_selector(
+            ".U26fgb.JRY2Pb.mUbCce.kpROve.yBiuPb.y1zVCf.HNeRed.M9Bg4d").click()
+        sleep(2)
+        self.driver.find_element_by_css_selector(
+            ".U26fgb.JRY2Pb.mUbCce.kpROve.yBiuPb.y1zVCf.HNeRed.M9Bg4d").click()
+        sleep(2)
+        self.driver.find_element_by_css_selector(
+            ".NPEfkd.RveJvd.snByac").click()
+
