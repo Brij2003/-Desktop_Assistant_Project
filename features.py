@@ -97,8 +97,8 @@ def GetTemperature(query):
 
 def GetWeather(query):
 
-    PATH = "C:\Program Files (x86)\chromedriver.exe"
-    driver = webdriver.Chrome(PATH)
+    chromedriver_path = access.path("chromedriver_path")
+    driver = webdriver.Chrome(chromedriver_path)
     driver.minimize_window()
     driver.get("https://www.google.com/search?q=" + query)
 
@@ -113,17 +113,16 @@ def GetWeather(query):
     #tells weathe in details - like ppt, wind etc
     if 'detail' in query or 'details' in query:
         # get text and print
-        speakonly("The current temperature in "+ city.text + " is "+ temp.text + "°C," + " and the sky is " + sky.text +". ")
-        speakonly("Other details are. "+ ppt.text +', ' + humidity.text + ', and ' + Wind.text)
-        driver.close()
-        # return temp.text + ", " + sky.text  + ", " + ppt.text  + ", " + humidity.text  + ", " + Wind.text  + "."
+        res = "The current temperature in "+ city.text + " is "+ temp.text + "°C," + " and the sky is " + sky.text +". " + "Some other details are. "+ ppt.text +', ' + humidity.text + ', and ' + Wind.text
+        return res
 
     # tells overall weather only, not in details
     else:
         # get text and print
-        speakonly("The current temperature in "+ city.text + " is "+ temp.text + "°C," + " and the sky is " + sky.text +". ")
-        driver.close()
-        # return temp.text + ", " + sky.text  + "."
+        res = "The current temperature in "+ city.text + " is "+ temp.text + "°C," + " and the sky is " + sky.text +". "
+        return res
+    
+    driver.close()
 
 def howto(query):
     from pywikihow import search_wikihow
@@ -141,12 +140,6 @@ def howto(query):
 def googlesearch(query):
 
     #remove unimportant words from query
-    query=query.replace("search", "")
-    query=query.replace(" for ", "")
-    query=query.replace(" about ", "")
-    query=query.replace(" on ", "")
-    query=query.replace("google", "")
-    
     import pywhatkit as kt
     kt.search(query) #perform search
 
@@ -199,7 +192,7 @@ def my_location():
     city = geo_data['city']
     state = geo_data['region']
     country = geo_data['country']
-    webbrowser.open("http://www.google.com/maps/place/" + city + "")
+    # webbrowser.open("http://www.google.com/maps/place/" + city + "")
 
     return city, state, country
 
@@ -211,6 +204,7 @@ class log():
         self.sign_in = access.url("sign_in_url")
         # Defining a driver to open chrome driver
         self.driver = webdriver.Chrome(self.chromedriver_path)
+        self.driver.minimize_window()
         self.driver.get(self.sign_in)  # feeding the sign in link to the driver
 
     def login(self):
@@ -232,6 +226,7 @@ class log():
         #identifing the textbox using name of element and typing user password with the help of send_keys() function
         self.enter_pass.send_keys(Keys.RETURN)
         sleep(5)
+        self.driver.maximize_window()
 
 class mail(log):    
     def compose(self, subject, content, reciver_mail):
