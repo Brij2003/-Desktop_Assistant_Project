@@ -85,7 +85,7 @@ def GetTemperature(query):
         r = requests.get(url)
         data = BeautifulSoup(r.text,"html.parser")
         temp = data.find("div", class_="BNeawe").text
-        speakonly("The current temperature there" + " is " + temp)
+        return "The current temperature there" + " is " + temp
 
     else:
         url = "https://www.google.com/search?q=" + "temperature"
@@ -132,11 +132,12 @@ def howto(query):
         how_to = search_wikihow(query, max_results)
         assert len(how_to) == 1
         how_to[0].print()           # first result
-        speakonly(how_to[0].summary) #summary of 1st result
+        res = how_to[0].summary #summary of 1st result
 
     except Exception as e:
-        speakonly("Sorry sir, I am not able to find this")
-
+        res = "Sorry sir, I am not able to find this"
+    
+    return res
 #google search
 def googlesearch(query):
 

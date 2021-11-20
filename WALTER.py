@@ -3,8 +3,18 @@ from features import *
 state = "Please Wait..."
 chat = []
 chat_prev = []
-chatlist = " "
 
+def chatWalter(query):
+    global chat_prev
+    chat_prev = chat.copy()
+    chat.append("Walter: " + query)
+
+def chatUser(query):
+    global chat_prev
+    chat_prev = chat.copy()
+    chat.append("User: " + query)
+    sleep(1)
+    
 def speak(audio):
     # defining the speak function so that our assistant can speak any string given as input
     engine = pyttsx3.init('sapi5')  # defining the engine to speak given string
@@ -17,8 +27,7 @@ def speak(audio):
     state = "Speaking..."
     engine.say(audio)
     print(audio)
-    global chat
-    chat.append("Walter: " + audio)
+    chatWalter(audio)
     # Runs an event loop until all commands queued up until this method call complete
     engine.runAndWait()
 
@@ -68,13 +77,11 @@ class MainThread(QThread):
             print(state)
             return "None"
         
-        global chat
-        chat.append("User said: " + query)
+        chatUser(query)
         return query.lower()  # returning the query in lower alphabets
 
     def task(self):
         # running the while loop infinite times
-        global chat
         while True:
             self.query = self.takecomand()
             #if user asks intro/greet
@@ -149,14 +156,14 @@ class MainThread(QThread):
                 speak("Screenshot saved")
 
             elif 'temperature' in self.query:
-                chat.append("Walter: "+GetTemperature(self.query))
+                speak(GetTemperature(self.query))
 
             elif "weather" in self.query:
                 speak(GetWeather(self.query))
                 # chat.append("Walter: " + chatmsg2) #prints weather in chatbox
 
             elif "how to" in self.query:
-                howto(self.query)
+                speak(howto(self.query))
 
             elif "search" in self.query:
                 self.query = self.query.replace("search", "")
@@ -168,7 +175,8 @@ class MainThread(QThread):
                 googlesearch(self.query)
 
             elif "near" in self.query or 'nearby' in self.query:
-                chat.append("Walter: "+ nearby(self.query))   #adding msg to chatbox
+                speak(nearby(self.query))
+                # chat.append("Walter: "+ nearby(self.query))   #adding msg to chatbox
 
             elif "joke" in self.query or 'jokes' in self.query:
                 speak(pyjokes.get_joke())
@@ -250,15 +258,18 @@ class Main(QMainWindow):
         self.ui.Date.setText(lable_date)
         self.ui.Time.setText(lable_time)
         self.ui.state_of_assistant.setText(state)
-        global chatlist
         for item in chat:
-            if item not in chatlist:
-                chatlist = chatlist + item + " \n"
-
-        self.ui.Chat_box.setText(chatlist)
+            global chat_prev
+            if len(chat) != len(chat_prev):
+                self.res = listToString(chat[len(chat) - 1])
+                self.ui.Chat_box.append(self.res)
+                chat_prev.append(self.res)
         
     def showchat(self):
-        pass
+        global chat_prev,chat
+        if len(chat) != len(chat_prev):
+            res =listToString(chat[len(chat_prev)])
+            return res 
     
     def starttask(self):
         self.ui.movie = QtGui.QMovie("image/Walter bg.gif")
@@ -271,7 +282,7 @@ class Main(QMainWindow):
 
         timer = QTimer(self)
         timer.timeout.connect(self.showText)
-        timer.start(1000) 
+        timer.start(1000)
         startexecution.start()
         
     # def showquery()
