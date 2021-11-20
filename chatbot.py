@@ -1,14 +1,23 @@
-command_info = ['who are you','what is your name','what are you']
-info = ['Sir, i am your desktop assistant, My name is Walter. What can i do for you',
-        'sir, i am Walter. Your desktop assistant. Happy to see you.']
+command_info = ['who are you','what is your name','what are you','tell me about yourself']
+info = ['Sir, i am your desktop assistant, My name is walter. What can i do for you',
+        'sir, I am walter. Your desktop assistant. Happy to see you.']
 
-command_greet = ['hello Walter','are you there Walter','are you there','hello']
-greet = ['hello sir. how may i help you','i am here for your help','yes sir, how may i help you']
+command_greet = ['hello walter','are you there walter','are you there','hello']
+greet = ['Hello sir, how may i help you?','Hello sir, I am here for your help','Yes sir, how may i help you']
+
 command_quit = ['close the program', 'quit the program', 'terminate the program', 'exit the program'
                 'close program', 'quit program', 'terminate program', 'exit program','close','quit','exit']
-command_quit_replay = ['closing the program', 'quiting the program',
-                       'terminating the program', 'exiting the program']
-command_chat = ['good morning Walter','morning Walter']
-command_chat_replay = ['good morning sir i hope your day will be good','good morning sir how amy i help you']
-command_chat_2 = ['thank you Walter','thank you']
-command_chat_2_replay =['your welcome','my plesure','enjoy your day sir']
+command_quit_replay = ['Closing the program.', 'Quiting the program.',
+                       'Terminating the program.', 'Exiting the program.']
+
+chat_1 = ['good morning walter','morning walter','good morning']
+chat_1_replay = ['Good morning sir. I hope your day will be good','Good morning sir, how may i help you?','Good morinng sir, happy to see you again']
+
+chat_2 = ['thankyou walter','thank you','good job','good job walter','nice job']
+chat_2_replay =['Your welcome sir.','My pleasure.','Happy to help, sir']
+
+chat_3 = ['you are an idiot','what had you done',"are you crazy","shut up",'you are stupid','are you an idiot','you are idiot']
+chat_3_replay = ['Sorry sir, I apologize','Sorry sir, I am still learning.','Sorry sir']
+
+chat_4 = ['nice work','nice work walter','good work',"it's awesome"]
+chat_4_replay = ['Thank you sir.', 'Nice to hear from you sir.', 'My pleasure to help you.']
