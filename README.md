@@ -6,7 +6,7 @@
   <p align="center">
     Automates the boring tasks for you & Saves your time
     <br />
-    <a href="https://github.com/keshavjha018/Desktop_Assistant_Project/issues"><strong>Suggest a feature »</strong></a>
+    <a href="https://github.com/Brij2003/Desktop_Assistant_Project/issues"><strong>Suggest a feature »</strong></a>
     <br />
     <br />
     
