@@ -11,7 +11,7 @@
   </p>
 </div>
 
-
+[Project Report](https://docs.google.com/document/d/1qvrIWh1b0dRF_al1kI0ByCmzfFQCa_haM2fAzWonNd0/)
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -127,8 +127,8 @@ As of now we are still working on maximizing the tasks it can do and adding more
 
 - [x] Add readme documentation (Done)
 - [x] Add basic functionalities (Done)
-- [x] Add Additional features
-- [ ] Improve efficiency and speed. (Working)
+- [x] Add Additional features (Done)
+- [x] Improve efficiency and speed. (Done)
 - Supports
     - [x] Windows
 
