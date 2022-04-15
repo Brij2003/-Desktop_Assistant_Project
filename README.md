@@ -129,10 +129,10 @@ But is also capable of doing extensive and complex tasks like Voice typing, fetc
 
 ## Roadmap
 
-- [x] Add Documentation (Done)
-- [x] Add basic features (Done)
-- [x] Add advanced features (Done)
-- [x] Improve efficiency and speed (Done)
+- [x] Add Documentation
+- [x] Add basic features
+- [x] Add advanced features
+- [x] Improve efficiency and speed
 - Supports
     - [x] Windows
 
