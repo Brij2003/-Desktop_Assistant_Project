@@ -150,11 +150,7 @@ MIT License.
 
 - Keshav Kumar Jha (20bcs070)
 - Brij Vaghani (20bcs033)
-- Lucky Yadav (20bcs077)
 - Daulat Kumar Jha (20bcs037)
 - Hemant (20bcs058)
-- Rohan Singh (20bcs113)
-- Sparsh Jain (20bcs127)
-- Tejas Kedare (20bcs134)
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
